@@ -72,3 +72,7 @@ export async function safeProductName(id) {
  */
 
 // TODO: write namesInStock here.
+export async function namesInStock() {
+  const products = await findAllProducts();
+  return products.filter(product => product.inStock).map(product => product.name);
+};
